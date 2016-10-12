@@ -21,7 +21,7 @@
     ])
 
     .run(['$rootScope', '$state', '$resource', 'administrationService', function ($rootScope, $state, $resource, administrationService) {
-      var url = 'resources/userDetails.json';
+        var url = '/api/Users';
       $resource(url).get(
         function (response) {
           administrationService.setUserDetails(response.results);
