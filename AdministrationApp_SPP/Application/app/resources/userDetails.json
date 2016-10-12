@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "results": {
+    "firstName": "Ioan",
+    "lastName": "Nenciu",
+    "leftMenu": {
+      "general": "General data"
+    }
+  }
+}
