@@ -1,0 +1,30 @@
+{
+  "name": "adminstration",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "^1.9.1",
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-loader": "^1.5.7",
+    "angular-cookies": "^1.5.7",
+    "angular-messages": "^1.5.7",
+    "angular-resource": "^1.5.7",
+    "angular-ui-router": "0.3.1",
+    "angular-breadcrumb": "0.4.1",
+    "angular-sanitize": "^1.5.7",
+    "angular-touch": "^1.5.7",
+    "angular-translate": "2.11.0",
+    "angular-kendo-window": "2.2.4",
+    "moment": "2.12.0",
+    "moment-jdateformatparser": "1.0.2",
+    "underscore": "^1.8.3",
+    "angular-loading-bar": "0.9.0",
+    "material-design-lite": "^1.2.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.0"
+  },
+  "appPath": "app",
+  "moduleName": "administrationApp",
+  "overrides": {}
+}

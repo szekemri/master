@@ -1,0 +1,16 @@
+.leftMenuContainer {
+  height: calc(100% - 60px);
+  width: 240px;
+  display: flex;
+  position: absolute;
+  background-color: rgb(96,125,139);
+  box-shadow: 4px 0px 9px 0px rgba(0,0,0,0.36);
+  .userPicture {
+    margin: 5px auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: white;
+  }
+}
