@@ -10,13 +10,8 @@
       controller: leftBarController
     });
 
-  leftBarController.$inject = ['$scope', '$interval'];
-  function leftBarController($scope, $interval) {
-
-    // $interval(updateTime, 1000);
-    //
-    // function updateTime() {
-    //   $scope.currentTime = moment(new Date()).format('DD MM YYYY HH:mm');
-    // }
+  leftBarController.$inject = ['$scope', 'administrationService'];
+  function leftBarController($scope, administrationService) {
+    $scope.userDetails = administrationService.getUserDetails();
   }
 })();

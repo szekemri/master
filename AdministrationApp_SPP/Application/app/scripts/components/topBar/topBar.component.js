@@ -6,6 +6,12 @@
 (function () {
   angular.module('administrationApp')
     .component('topBar', {
-      templateUrl: 'scripts/components/topBar/topBar.template.html'
+      templateUrl: 'scripts/components/topBar/topBar.template.html',
+      controller: topBarController
     });
+
+  topBarController.$inject = ['$scope'];
+  function topBarController($scope) {
+
+  }
 })();

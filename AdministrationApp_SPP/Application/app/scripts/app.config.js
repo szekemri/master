@@ -14,19 +14,14 @@
   stateConfig.$inject = ['$urlRouterProvider', '$stateProvider'];
   function stateConfig($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise(function () {
-      return 'login';
+      return 'home';
     });
 
     $stateProvider
-      .state('login', {
-        url: '/',
-        templateUrl: 'login.html',
-        controller: 'loginController'
-      })
       .state('home', {
         url: '/home',
-        templateUrl: 'home.html',
+        templateUrl: 'scripts/home/home.html',
         controller: 'homeController'
-      });
+      })
   }
 })();
