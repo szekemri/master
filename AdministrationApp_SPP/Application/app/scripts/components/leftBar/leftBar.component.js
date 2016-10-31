@@ -13,5 +13,11 @@
   leftBarController.$inject = ['$scope', 'administrationService'];
   function leftBarController($scope, administrationService) {
     $scope.userDetails = administrationService.getUserDetails();
+    var originatorEv;
+
+    $scope.openMenu = function($mdOpenMenu, ev) {
+      originatorEv = ev;
+      $mdOpenMenu(ev);
+    };
   }
 })();

@@ -3,6 +3,7 @@
   width: 240px;
   display: flex;
   position: absolute;
+  background-color: #1E88E5;
   box-shadow: 4px 0px 9px 0px rgba(0,0,0,0.36);
   .userDetails {
     height: 150px;
@@ -15,6 +16,21 @@
       border-radius: 50%;
       border: 1px solid black;
       background-color: white;
+    }
+    .userMenu {
+      position: absolute;
+      top: 70px;
+      margin-left: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .name {
+      display: inline-flex;
+      position: absolute;
+      top: 35px;
+      margin-left: 15px;
     }
 
   }

@@ -5,7 +5,8 @@
 
 (function () {
   angular.module('administrationApp')
-    .config(stateConfig);
+    .config(stateConfig)
+    .config(materialThemeConfig);
 
   /**
    * State config injection + method
@@ -22,6 +23,29 @@
         url: '/home',
         templateUrl: 'scripts/home/home.html',
         controller: 'homeController'
+      });
+  }
+
+  materialThemeConfig.$inject = ['$mdThemingProvider'];
+  function materialThemeConfig($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue', {
+        'default': '400', // by default use shade 400 from the blue palette for primary intentions
+        'hue-1': '500', // use shade 100 for the <code>md-hue-1</code> class
+        'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
+        'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
       })
+      // If you specify less than all of the keys, it will inherit from the
+      // default shades
+      .accentPalette('purple', {
+        'default': '200' // use shade 200 for default, and keep all other shades the same
+      })
+
+      .backgroundPalette('grey', {
+        'default': '400', // by default use shade 400 from the blue palette for primary intentions
+        'hue-1': '500', // use shade 100 for the <code>md-hue-1</code> class
+        'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
+        'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+      });
   }
 })();
