@@ -23,8 +23,9 @@
 
     .run(['$rootScope', '$state', '$resource', 'administrationService', function ($rootScope, $state, $resource, administrationService) {
         var url = '/api/Users';
-      $resource(url).get(
-        function (response) {
+        $resource(url).get(
+            { id: 1 },
+            function (response) {
           administrationService.setUserDetails(response.results);
         });
       // $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
