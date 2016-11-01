@@ -10,13 +10,26 @@
       controller: leftBarController
     });
 
-  leftBarController.$inject = ['$scope', 'administrationService'];
-  function leftBarController($scope, administrationService) {
-    $scope.userDetails = administrationService.getUserDetails();
-    var originatorEv;
+  leftBarController.$inject = ['$scope', '$resource'];
+  function leftBarController($scope, $resource) {
+
+    var url = '/api/Users';
+
+    $resource(url).get(
+      {id: 1},
+      function (response) {
+        var userDetails = {
+          emailAddress: response.emailAddress,
+          firstName: response.firstName,
+          isDeleted: response.isDeleted,
+          lastName: response.lastName,
+          loginName: response.loginName,
+          userId: response.userID
+        };
+        $scope.userDetails = userDetails;
+      });
 
     $scope.openMenu = function($mdOpenMenu, ev) {
-      originatorEv = ev;
       $mdOpenMenu(ev);
     };
   }

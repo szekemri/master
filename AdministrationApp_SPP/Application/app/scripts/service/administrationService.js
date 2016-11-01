@@ -9,7 +9,7 @@
 
   function administrationService() {
     var me = this;
-    me.userDetails = '';
+    me.userDetails = null;
 
     me.setUserDetails = function (userDetails) {
       me.userDetails = userDetails;

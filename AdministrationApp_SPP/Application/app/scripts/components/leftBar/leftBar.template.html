@@ -1,14 +1,26 @@
 <md-content class="leftMenuContainer">
   <div class="userDetails">
-
-    <md-menu class="userMenu" md-offset="50 50">
+    <md-menu class="userMenu" md-offset="54 54">
       <img class="userPicture" src="images/user.png" ng-click="openMenu($mdOpenMenu, $event)">
       <md-menu-content class="menuContent">
         <md-menu-item>
-          <i class="material-icons">settings</i>
-          <md-button>Option 1</md-button>
+          <md-button class="menuItemButton">
+            <i class="material-icons menuItemGlyph">perm_identity</i>
+            Contul meu
+          </md-button>
         </md-menu-item>
-        <div>Option 2</div>
+        <md-menu-item>
+          <md-button class="menuItemButton">
+            <i class="material-icons menuItemGlyph">settings</i>
+            Setări
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button class="menuItemButton">
+            <i class="material-icons menuItemGlyph">power_settings_new</i>
+            Deconectare
+          </md-button>
+        </md-menu-item>
       </md-menu-content>
     </md-menu>
     <div class="name">{{userDetails.firstName}} {{userDetails.lastName}}</div>
