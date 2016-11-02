@@ -1,7 +1,10 @@
 <md-content class="leftMenuContainer">
   <div class="userDetails">
     <md-menu class="userMenu" md-offset="54 54">
-      <img class="userPicture" src="images/user.png" ng-click="openMenu($mdOpenMenu, $event)">
+      <span ng-click="openMenu($mdOpenMenu, $event)">
+        <img class="userPicture" src="images/user.png">
+        <div class="name">{{userDetails.firstName}} {{userDetails.lastName}}</div>
+      </span>
       <md-menu-content class="menuContent">
         <md-menu-item>
           <md-button class="menuItemButton">
@@ -23,7 +26,6 @@
         </md-menu-item>
       </md-menu-content>
     </md-menu>
-    <div class="name">{{userDetails.firstName}} {{userDetails.lastName}}</div>
   </div>
   <div class="mainLeftMenu">
     <md-button class="menuItem">
