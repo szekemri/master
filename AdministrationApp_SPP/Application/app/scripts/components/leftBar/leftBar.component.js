@@ -10,8 +10,8 @@
       controller: leftBarController
     });
 
-  leftBarController.$inject = ['$scope', '$resource'];
-  function leftBarController($scope, $resource) {
+  leftBarController.$inject = ['$scope', '$resource', 'administrationService'];
+  function leftBarController($scope, $resource, administrationService) {
 
     var url = '/api/Users';
 
@@ -26,8 +26,13 @@
           loginName: response.loginName,
           userId: response.userID
         };
+
+        administrationService.setUserId(response.userID);
+
         $scope.userDetails = userDetails;
       });
+
+
 
     $scope.openMenu = function($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
