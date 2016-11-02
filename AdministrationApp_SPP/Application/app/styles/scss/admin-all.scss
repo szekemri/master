@@ -61,17 +61,25 @@ body {
     margin-left: auto;
     margin-right: auto;
     .menuItem {
-      background-color: #FFFFFF;
+      display: block;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      background-color: #A5D6A7;
       margin-bottom: 50px;
       height: 70px;
       width: 70px;
       border-radius: 50%;
+      min-height: 0;
+      min-width: 0;
       i {
         font-size: 35px;
-        padding: 19px;
+        padding: 14px;
       }
       &:hover {
+        background-color: #81C784;
         cursor: pointer;
+      }
+      .md-ripple-container {
+        border-radius: 50%;
       }
     }
   }
