@@ -1,0 +1,10 @@
+.userProfile {
+  md-input-container{
+    &.inputForm {
+      margin-left: 20px;
+      label {
+        z-index: auto;
+      }
+    }
+  }
+}

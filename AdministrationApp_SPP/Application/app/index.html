@@ -24,13 +24,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="logoContainer">LOGO</div>
-    <top-bar></top-bar>
-    <left-bar></left-bar>
-
-    <div class="container">
-      <div ui-view=""></div>
+    <!--<div class="logoContainer">LOGO</div>-->
+    <top-bar class="topWrapper"></top-bar>
+    <div class="mainContainer">
+      <div class="mainContent">
+        <div ui-view=""></div>
+      </div>
     </div>
+    <left-bar class="leftWrapper"></left-bar>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -65,9 +66,10 @@
     <script src="scripts/components/topBar/topBar.component.js"></script>
     <!-- end components -->
 
-    <!-- home -->
+    <!-- routes -->
     <script src="scripts/home/home.controller.js"></script>
-    <!-- end home-->
+    <script src="scripts/userProfile/userProfile.controller.js"></script>
+    <!-- end routes-->
 
     <script src="scripts/service/administrationService.js"></script>
     <script src="scripts/components/browserSync.js"></script>

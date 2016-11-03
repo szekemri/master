@@ -6,7 +6,7 @@
 (function () {
   angular.module('administrationApp')
     .config(stateConfig)
-    .config(materialThemeConfig);
+    // .config(materialThemeConfig);
 
   /**
    * State config injection + method
@@ -23,6 +23,12 @@
         url: '/home',
         templateUrl: 'scripts/home/home.html',
         controller: 'homeController'
+      })
+      .state('myAccount', {
+        url: '/myAccount',
+        templateUrl: 'scripts/userProfile/userProfile.html',
+        controller: 'userProfileController',
+        controllerAs: 'userProfile'
       });
   }
 
@@ -49,3 +55,4 @@
       });
   }
 })();
+

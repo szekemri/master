@@ -1,44 +1,34 @@
-<md-content class="leftMenuContainer">
+<div class="leftMenuContainer">
   <div class="userDetails">
     <md-menu class="userMenu" md-offset="54 54">
       <span ng-click="openMenu($mdOpenMenu, $event)">
         <img class="userPicture" src="images/user.png">
-        <div class="name">{{userDetails.firstName}} {{userDetails.lastName}}</div>
+        <div class="name">CEVA{{userDetails.firstName}} {{userDetails.lastName}}</div>
       </span>
       <md-menu-content class="menuContent">
-        <md-menu-item>
-          <md-button class="menuItemButton">
-            <i class="material-icons menuItemGlyph">perm_identity</i>
-            Contul meu
-          </md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button class="menuItemButton">
-            <i class="material-icons menuItemGlyph">settings</i>
-            Setări
-          </md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button class="menuItemButton">
-            <i class="material-icons menuItemGlyph">power_settings_new</i>
-            Deconectare
-          </md-button>
-        </md-menu-item>
+        <div ng-repeat="item in userMenu">
+          <md-menu-item>
+            <md-button class="menuItemButton" ui-sref="{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
+              <i class="material-icons menuItemGlyph">{{item.GlyphCode}}</i>
+              {{item.MenuItemText}}
+            </md-button>
+          </md-menu-item>
+        </div>
       </md-menu-content>
     </md-menu>
   </div>
   <div class="mainLeftMenu">
-    <md-button class="menuItem">
+    <md-button class="menuItem" ui-sref="home" ui-sref-opts="{reload: true}">
       <md-tooltip class="tooltip" md-direction="right">General</md-tooltip>
       <i class="material-icons">library_books</i>
     </md-button>
-    <md-button class="menuItem">
+    <md-button class="menuItem" ui-sref="home" ui-sref-opts="{reload: true}">
         <md-tooltip class="tooltip" md-direction="right">Detalii intretinere</md-tooltip>
       <i class="material-icons">description</i>
     </md-button>
-    <md-button class="menuItem">
+    <md-button class="menuItem" ui-sref="home" ui-sref-opts="{reload: true}">
       <md-tooltip class="tooltip" md-direction="right">Plata intretinere</md-tooltip>
       <i class="material-icons">euro_symbol</i>
     </md-button>
   </div>
-</md-content>
+</div>

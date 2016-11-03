@@ -1,6 +1,9 @@
 body {
   margin: 0;
-
+  height: 100%;
+  background-color: #faf8f4;
+  font-family: Segoe UI,Verdana,Arial,Helvetica,sans-serif;
+  overflow-y: scroll;
   .logoContainer {
     position: absolute;
     width: 240px;
@@ -9,9 +12,17 @@ body {
     line-height: 60px;
   }
 
-  .container {
-    margin-top: 10px;
-    margin-left: 250px;
-    z-index: -1;
+  .mainContainer {
+    width: 100%;
+    padding-top: 60px;
+    .mainContent {
+      float: right;
+      width: 100%;
+      padding-left: 240px;
+    }
   }
+}
+
+* {
+  box-sizing: border-box;
 }

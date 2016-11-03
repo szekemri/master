@@ -1,7 +1,10 @@
 // Source: app/styles/scss/general.scss
 body {
   margin: 0;
-
+  height: 100%;
+  background-color: #faf8f4;
+  font-family: Segoe UI,Verdana,Arial,Helvetica,sans-serif;
+  overflow-y: scroll;
   .logoContainer {
     position: absolute;
     width: 240px;
@@ -10,24 +13,33 @@ body {
     line-height: 60px;
   }
 
-  .container {
-    margin-top: 10px;
-    margin-left: 250px;
-    z-index: -1;
+  .mainContainer {
+    width: 100%;
+    padding-top: 60px;
+    .mainContent {
+      float: right;
+      width: 100%;
+      padding-left: 240px;
+    }
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 // Source: app/scripts/components/leftBar/leftBar.scss
 .leftMenuContainer {
-  height: calc(100% - 60px);
   width: 240px;
-  display: flex;
+  height: 100%;
+  float: left;
+  position: fixed;
+  top: 60px;
+  z-index: 4;
   background-color: #1E88E5;
-  position: absolute;
   box-shadow: 4px 0px 9px 0px rgba(0, 0, 0, 0.36);
   .userDetails {
     height: 150px;
-    position: absolute;
     padding-left: 20px;
     .userMenu {
       .userPicture {
@@ -55,10 +67,9 @@ body {
     }
   }
   .mainLeftMenu {
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
     .menuItem {
+      margin-left: auto;
+      margin-right: auto;
       display: block;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
       background-color: #A5D6A7;
@@ -101,9 +112,25 @@ body {
   font-size: 15px;
 }
 
+
 // Source: app/scripts/components/topBar/topBar.scss
 .topBarContainer {
   height: 60px;
   margin-left: 240px;
   box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.36);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+// Source: app/scripts/userProfile/userProfile.style.scss
+.userProfile {
+  md-input-container{
+    &.inputForm {
+      margin-left: 20px;
+      label {
+        z-index: auto;
+      }
+    }
+  }
 }

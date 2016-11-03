@@ -21,21 +21,19 @@
       'ngMaterial'
     ])
 
-    .run(['$rootScope', '$state', function ($rootScope, $state) {
+    .run(['$rootScope', '$state', 'administrationService', function ($rootScope, $state, administrationService) {
 
       // $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
       //   debugger;
-      //   if (toState.name !== fromState.name) {
+      //   // if (toState.name !== fromState.name) {
       //     event.preventDefault();
-      //     var url = 'resources/userDetails.json';
-      //     $resource(url).get(
-      //       function (response) {
-      //         administrationService.setUserDetails(response.results);
-      //         $state.reload();
-      //       }
-      //     );
-      //   }
+      //
+      //     if (!administrationService.getUserDetails()) {
+      //       $state.reload();
+      //     }
+      //   // }
       //
       // });
+
     }]);
 })();

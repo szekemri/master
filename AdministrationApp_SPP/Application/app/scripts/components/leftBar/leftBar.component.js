@@ -18,21 +18,14 @@
     $resource(url).get(
       {id: 2},
       function (response) {
-        var userDetails = {
-          emailAddress: response.emailAddress,
-          firstName: response.firstName,
-          isDeleted: response.isDeleted,
-          lastName: response.lastName,
-          loginName: response.loginName,
-          userId: response.userID
-        };
+        var results = response.results;
 
-        administrationService.setUserId(response.userID);
-
-        $scope.userDetails = userDetails;
+        $scope.leftMenu = results.LeftMenuItems;
+        $scope.userMenu = results.UserConfigurationItems;
+        $scope.userDetails = results.UserDetails;
+        // administrationService.setUserId(userDetails.userID);
+        // administrationService.setUserDetails(userDetails);
       });
-
-
 
     $scope.openMenu = function($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
