@@ -9,6 +9,7 @@
 
 namespace AdministrationApp_SPP.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -22,4 +23,14 @@ namespace AdministrationApp_SPP.Models
         public byte[] IsDeleted { get; set; }
         public Nullable<bool> IsAdministrator { get; set;}
     }
+
+    [JsonObject(Title = "results")]
+    public class UserConfiguration
+    {
+        public UserConfiguration() { }
+
+        public List<MenuItemsView> UserConfigurationItems { get; set; }
+        public List<MenuItemsView> LeftMenuItems { get; set; }
+        public Users UserDetails { get; set; }
+    };
 }

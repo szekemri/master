@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Newtonsoft.Json.Serialization;
+using AdministrationApp_SPP.App_Start;
+using AdministrationApp_SPP.App_Start.FooService;
 
 
 namespace AdministrationApp_SPP
@@ -25,6 +27,7 @@ namespace AdministrationApp_SPP
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            GlobalConfiguration.Configuration.Formatters.Insert(0, new RootFormatter());
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using AdministrationApp_SPP.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,6 @@ namespace AdministrationApp_SPP.Controllers
     public class MenuItemsController : ApiController
     {
         private MenuItemsDBEntities db = new MenuItemsDBEntities();
-
-        public class UserConfiguration 
-        {
-            public UserConfiguration() { }
-
-            public List<MenuItemsView> UserConfigurationItems { get; set; }
-            public List<MenuItemsView> LeftMenuItems { get; set; }
-            public Users UserDetails { get; set; }
-        };
 
         // GET api/MenuItems
         public IEnumerable<MenuItemsView> GetMenuItems()
