@@ -205,8 +205,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TodoController.cs" />
-    <Compile Include="Controllers\TodoListController.cs" />
+    <Compile Include="Controllers\MenuItemsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Filters\ValidateHttpAntiForgeryTokenAttribute.cs" />
@@ -223,11 +222,24 @@
     <Compile Include="Models\BuildingType.cs">
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TodoItemDto.cs" />
-    <Compile Include="Models\TodoListDto.cs" />
-    <Compile Include="Models\TodoList.cs" />
-    <Compile Include="Models\TodoItem.cs" />
-    <Compile Include="Models\TodoItemContext.cs" />
+    <Compile Include="Models\MenuItemsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuItemsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuItemsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuItemsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuItemsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuItemsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuItemsView.cs">
+      <DependentUpon>MenuItemsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserBuilding.cs">
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
@@ -17080,7 +17092,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
@@ -22709,6 +22723,23 @@
     <Content Include="Application\README.md" />
     <Content Include="Application\test\.jshintrc" />
     <Content Include="Application\app\resources\userDetails.json" />
+    <EntityDeploy Include="Models\MenuItemsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MenuItemsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MenuItemsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MenuItemsModel.edmx</DependentUpon>
+      <LastGenOutput>MenuItemsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MenuItemsModel.edmx.diagram">
+      <DependentUpon>MenuItemsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MenuItemsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MenuItemsModel.edmx</DependentUpon>
+      <LastGenOutput>MenuItemsModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -22766,7 +22797,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_UserSettings.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\Home\_Register.cshtml" />
@@ -23136,6 +23169,7 @@
     <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
     <TypeScriptSourceRoot>C:\Program Files (x86)\Microsoft SDKs\TypeScript</TypeScriptSourceRoot>
+    <TypeScriptMapRoot />
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

@@ -12,14 +12,16 @@ namespace AdministrationApp_SPP.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class MenuItemsView
     {
-        public int UserID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public string LoginName { get; set; }
-        public byte[] IsDeleted { get; set; }
-        public Nullable<bool> IsAdministrator { get; set;}
+        public int MenuItemID { get; set; }
+        public string MenuItemText { get; set; }
+        public string MenuItemType { get; set; }
+        public string MenuItemDescription { get; set; }
+        public int ApplicationMenuID { get; set; }
+        public string Name { get; set; }
+        public string GlyphCode { get; set; }
+        public Nullable<bool> IsForAdminUse { get; set; }
+        public Nullable<int> Sort { get; set; }
     }
 }

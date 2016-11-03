@@ -24,6 +24,8 @@ namespace AdministrationApp_SPP
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
         }
     }
 }

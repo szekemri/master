@@ -13,10 +13,10 @@
   leftBarController.$inject = ['$scope', '$resource', 'administrationService'];
   function leftBarController($scope, $resource, administrationService) {
 
-    var url = '/api/Users';
+    var url = '/api/MenuItems';
 
     $resource(url).get(
-      {id: 1},
+      {id: 2},
       function (response) {
         var userDetails = {
           emailAddress: response.emailAddress,

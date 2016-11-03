@@ -14,7 +14,7 @@ namespace AdministrationApp_SPP.Controllers
 {
     public class UsersController : ApiController
     {
-        private AdministrationAppDBEntities db = new AdministrationAppDBEntities();
+        private UsersDBEntities db = new UsersDBEntities();
 
         // GET api/Users
         public IEnumerable<Users> GetUsers()
