@@ -5,7 +5,7 @@
 
 (function () {
   angular.module('administrationApp')
-    .config(stateConfig)
+    .config(stateConfig);
     // .config(materialThemeConfig);
 
   /**
@@ -19,12 +19,27 @@
     });
 
     $stateProvider
-      .state('home', {
+      .state('main', {
+        abstract: true,
+        templateUrl: 'scripts/mainPage/mainPage.html',
+        controller: 'mainPageController',
+        resolve: {
+          userDetails: function($resource, administrationService){
+            var urlUsers = '/api/Users';
+
+            if (!administrationService.getUserDetails()) {
+              return $resource(urlUsers).get({id: 2});
+            }
+
+          }
+        }
+      })
+      .state('main.home', {
         url: '/home',
         templateUrl: 'scripts/home/home.html',
         controller: 'homeController'
       })
-      .state('myAccount', {
+      .state('main.myAccount', {
         url: '/myAccount',
         templateUrl: 'scripts/userProfile/userProfile.html',
         controller: 'userProfileController',

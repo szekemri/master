@@ -58,8 +58,9 @@ body {
         font-weight: 400;
         color: #ECEFF1;
         float: right;
-        margin-top: 35px;
+        margin-top: 29px;
         margin-left: 10px;
+        margin-right: 29px;
       }
       &:hover {
         cursor: pointer;
@@ -81,7 +82,7 @@ body {
       min-width: 0;
       i {
         font-size: 35px;
-        padding: 14px;
+        padding: 17px 13px 13px 13px;
       }
       &:hover {
         background-color: #81C784;

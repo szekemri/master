@@ -13,18 +13,17 @@
   leftBarController.$inject = ['$scope', '$resource', 'administrationService'];
   function leftBarController($scope, $resource, administrationService) {
 
-    var url = '/api/MenuItems';
+    $scope.userDetails = administrationService.getUserDetails();
 
-    $resource(url).get(
+    var urlMenu = '/api/MenuItems';
+
+    $resource(urlMenu).get(
       {id: 2},
       function (response) {
         var results = response.results;
 
         $scope.leftMenu = results.LeftMenuItems;
         $scope.userMenu = results.UserConfigurationItems;
-        $scope.userDetails = results.UserDetails;
-        // administrationService.setUserId(userDetails.userID);
-        // administrationService.setUserDetails(userDetails);
       });
 
     $scope.openMenu = function($mdOpenMenu, ev) {
