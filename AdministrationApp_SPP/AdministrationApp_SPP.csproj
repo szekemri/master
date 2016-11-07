@@ -205,8 +205,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UserBuildingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuItemsController.cs" />
+    <Compile Include="Controllers\UserConfigurationController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Filters\ValidateHttpAntiForgeryTokenAttribute.cs" />
@@ -214,15 +216,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Buildings.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BuildingsView.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BuildingType.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\MenuItemsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -241,9 +234,25 @@
     <Compile Include="Models\MenuItemsView.cs">
       <DependentUpon>MenuItemsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserBuilding.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
+    <Compile Include="Models\UserBuildingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserBuildingModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserBuildingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserBuildingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserBuildingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserBuildingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserBuildingView.cs">
+      <DependentUpon>UserBuildingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserConfigurationModel.cs" />
     <Compile Include="Models\UserModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -263,6 +272,7 @@
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBuildingContextClass__AdministrationApp_SPP\Models_.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Application\app\404.html" />
@@ -22740,6 +22750,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MenuItemsModel.edmx</DependentUpon>
       <LastGenOutput>MenuItemsModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\UserBuildingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserBuildingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserBuildingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserBuildingModel.edmx</DependentUpon>
+      <LastGenOutput>UserBuildingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserBuildingModel.edmx.diagram">
+      <DependentUpon>UserBuildingModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\UserBuildingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserBuildingModel.edmx</DependentUpon>
+      <LastGenOutput>UserBuildingModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />

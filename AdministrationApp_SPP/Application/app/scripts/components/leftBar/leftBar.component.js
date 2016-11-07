@@ -15,10 +15,10 @@
 
     $scope.userDetails = administrationService.getUserDetails();
 
-    var urlMenu = '/api/MenuItems';
+    var urlMenu = '/api/UserConfiguration';
 
     $resource(urlMenu).get(
-      {id: 2},
+      {id: 1},
       function (response) {
         var results = response.results;
 

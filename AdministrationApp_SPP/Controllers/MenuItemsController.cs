@@ -20,17 +20,26 @@ namespace AdministrationApp_SPP.Controllers
         }
 
         // GET api/MenuItems
-        public UserConfiguration GetMenuItems(int id)
+        public UserConfiguration GetMenuItems(bool? HasAdministratorRights, UserBuildingView userBuildingView)
         {
             //create instance of user configuration class/object
             UserConfiguration userConfiguration = new UserConfiguration();
 
             //initialize menuitems
-            userConfiguration.UserConfigurationItems = db.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 2).ToList();
-            userConfiguration.LeftMenuItems = db.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 3).ToList();
+            userConfiguration.userConfigurationMenuItems = db.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 2).ToList();
+            userConfiguration.leftMenuItems = db.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 3).ToList();
+            userConfiguration.userDetails = userBuildingView;
+
+            //check user rights and filter menuItems based on them
+            if (HasAdministratorRights == false)
+            {
+                //filter menu items
+                userConfiguration.userConfigurationMenuItems = userConfiguration.userConfigurationMenuItems.Where(x => x.IsForAdminUse == HasAdministratorRights).ToList();
+                userConfiguration.leftMenuItems = userConfiguration.leftMenuItems.Where(x => x.IsForAdminUse == HasAdministratorRights).ToList();
+            }
 
             //check if records were found
-            if (userConfiguration.UserConfigurationItems.Count == 0 || userConfiguration.LeftMenuItems.Count == 0)
+            if (userConfiguration.userConfigurationMenuItems.Count == 0 || userConfiguration.leftMenuItems.Count == 0)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }

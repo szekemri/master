@@ -13,10 +13,10 @@ namespace AdministrationApp_SPP.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersDBEntities : DbContext
+    public partial class UserBuildingDBEntities : DbContext
     {
-        public UsersDBEntities()
-            : base("name=AdministrationAppDBEntities")
+        public UserBuildingDBEntities()
+            : base("name=UserBuildingDBEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace AdministrationApp_SPP.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Users> Users { get; set; }
+        public DbSet<UserBuildingView> UserBuildingView { get; set; }
     }
 }

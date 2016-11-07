@@ -11,20 +11,20 @@ namespace AdministrationApp_SPP.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
-    public partial class Buildings
+    public partial class UserBuildingView
     {
-        public int BuildingID { get; set; }
-        public Nullable<int> BuildingTypeID { get; set; }
+        [Key]
+        public int UserID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string LoginName { get; set; }
+        public string EmailAddress { get; set; }
         public string BuildingName { get; set; }
-        public Nullable<int> BuildingNumber { get; set; }
         public string StreetName { get; set; }
         public Nullable<int> StreetNumber { get; set; }
         public Nullable<decimal> PostCodeNumber { get; set; }
-        public Nullable<int> CountyID { get; set; }
-        public Nullable<int> CountryID { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
-    
-        public virtual BuildingType BuildingType { get; set; }
+        public Nullable<bool> IsAdministrator { get; set; }
     }
 }
