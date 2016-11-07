@@ -7,20 +7,12 @@
   angular.module('administrationApp')
     .controller('mainPageController', mainPageController);
 
-  mainPageController.$inject = ['userDetails', 'administrationService'];
-  function mainPageController(userDetails, administrationService) {
+  mainPageController.$inject = ['serverData', 'administrationService'];
+  function mainPageController(serverData, administrationService) {
 
-    if (userDetails) {
-      var details = {
-        emailAddress: userDetails.EmailAddress,
-        firstName: userDetails.FirstName,
-        isDeleted: userDetails.IsDeleted,
-        lastName: userDetails.LastName,
-        loginName: userDetails.LoginName,
-        userId: userDetails.UserID
-      };
-
-      administrationService.setUserDetails(details);
+    if (serverData) {
+      administrationService.setServerData(serverData.results);
+      administrationService.setUserDetails(serverData.results.userDetails);
     }
   }
 

@@ -5,7 +5,7 @@
 
 (function () {
   angular.module('administrationApp')
-    .controller('homeController', [function () {
+    .controller('generalInformationController', [function () {
 
     }]);
 })();

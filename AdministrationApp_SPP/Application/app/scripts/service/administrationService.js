@@ -10,22 +10,22 @@
   function administrationService() {
     var me = this;
     me.userDetails = null;
-    me.userId = 0;
+    me.serverData = null;
 
-    me.setUserDetails = function (userDetails) {
-      me.userDetails = userDetails;
+    me.setServerData = function (userDetails) {
+      me.serverData = userDetails;
+    };
+
+    me.getServerData = function () {
+      return me.serverData;
+    };
+
+    me.setUserDetails = function (userId) {
+      me.userDetails = userId;
     };
 
     me.getUserDetails = function () {
       return me.userDetails;
-    };
-
-    me.setUserId = function (userId) {
-      me.userId = userId;
-    };
-
-    me.getUserId = function () {
-      return me.userId;
     };
 
   }

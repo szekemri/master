@@ -24,26 +24,26 @@
         templateUrl: 'scripts/mainPage/mainPage.html',
         controller: 'mainPageController',
         resolve: {
-          userDetails: function($resource, administrationService){
-            var urlUsers = '/api/Users';
+          serverData: function($resource, administrationService){
+            var urlUsers = '/api/UserConfiguration';
 
-            if (!administrationService.getUserDetails()) {
-              return $resource(urlUsers).get({id: 2});
+            if (!administrationService.getServerData()) {
+              return $resource(urlUsers).get({id: 1});
             }
 
           }
         }
       })
-      .state('main.home', {
-        url: '/home',
-        templateUrl: 'scripts/home/home.html',
-        controller: 'homeController'
+      .state('main.generalInformation', {
+        url: '/generalInformation',
+        templateUrl: 'scripts/generalInformation/generalInformation.html',
+        controller: 'generalInformationController'
       })
       .state('main.myAccount', {
         url: '/myAccount',
-        templateUrl: 'scripts/userProfile/userProfile.html',
-        controller: 'userProfileController',
-        controllerAs: 'userProfile'
+        templateUrl: 'scripts/myAccount/myAccount.html',
+        controller: 'myAccountController',
+        controllerAs: 'myAccount'
       });
   }
 
