@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Projects\AdministrationApp_2016\Application\AdministrationApp_SPP\AdministrationApp_SPP\Models\UserModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Projects\AdministrationApp_2016\Application\AdministrationApp_SPP\AdministrationApp_SPP\Models\UsersModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

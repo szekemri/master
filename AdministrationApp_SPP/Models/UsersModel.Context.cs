@@ -13,10 +13,10 @@ namespace AdministrationApp_SPP.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersDBEntities : DbContext
+    public partial class UsersModelDBEntities : DbContext
     {
-        public UsersDBEntities()
-            : base("name=AdministrationAppDBEntities")
+        public UsersModelDBEntities()
+            : base("name=UsersModelDBEntities")
         {
         }
     
