@@ -21,7 +21,7 @@
     <div ng-repeat="item in userConfig.leftMenu">
       <md-button class="menuItem" ui-sref="main.{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
         <md-tooltip class="tooltip" md-direction="right">{{item.MenuItemText}}</md-tooltip>
-        <i class="material-icons">{{item.GlyphCode}}</i>
+        <i class="material-icons glyph">{{item.GlyphCode}}</i>
       </md-button>
     </div>
   </div>

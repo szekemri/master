@@ -19,7 +19,9 @@ body {
     .mainContent {
       float: right;
       width: 100%;
-      padding-left: 240px;
+      padding-left: 300px;
+      padding-right: 60px;
+      margin-top: 40px;
     }
   }
 }
@@ -80,9 +82,9 @@ body {
       border-radius: 50%;
       min-height: 0;
       min-width: 0;
-      i {
+      .glyph {
         font-size: 35px;
-        padding: 17px 13px 13px 13px;
+        padding: 18px 12px 12px 12px;
       }
       &:hover {
         background-color: #81C784;
@@ -126,6 +128,27 @@ body {
 
 // Source: app/scripts/myAccount/myAccount.style.scss
 .userProfile {
+  .pageTitleHeader {
+    height: 80px;
+    line-height: 80px;
+    margin-left: 30px;
+    font-size: 25px;
+    padding: 0;
+    &:before {
+      font-family: "Material Icons";
+      content: 'account_box';
+      position: absolute;
+      top: 10px;
+      font-size: 55px;
+    }
+    .pageHeader {
+      margin-left: 70px;
+      display: inline-block;
+    }
+  }
+  .delimiterLine {
+    border-top: 2px solid #ccc;
+  }
   md-input-container{
     &.inputForm {
       margin-left: 20px;

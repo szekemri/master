@@ -5,7 +5,8 @@
 
 (function () {
   angular.module('administrationApp')
-    .config(stateConfig);
+    .config(stateConfig)
+    .config(httpConfig);
     // .config(materialThemeConfig);
 
   /**
@@ -28,7 +29,7 @@
             var urlUsers = '/api/UserConfiguration';
 
             if (!administrationService.getServerData()) {
-              return $resource(urlUsers).get({id: 1});
+              return $resource(urlUsers).get({id: 1}).$promise;
             }
 
           }
@@ -45,6 +46,14 @@
         controller: 'myAccountController',
         controllerAs: 'myAccount'
       });
+  }
+
+  httpConfig.$inject = ['$httpProvider'];
+  function httpConfig($httpProvider) {
+    $httpProvider.defaults.headers.common = {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Response-Type': 'json'
+    };
   }
 
   materialThemeConfig.$inject = ['$mdThemingProvider'];
