@@ -3,25 +3,33 @@ body {
   height: 100%;
   background-color: #faf8f4;
   font-family: Segoe UI,Verdana,Arial,Helvetica,sans-serif;
-  overflow-y: scroll;
+  //overflow-y: scroll;
+  .abstractViewContainer {
+    height: 100%;
+    .mainContainer {
+      width: 100%;
+      padding-top: 60px;
+      height: calc(100% - 60px);
+      .mainContent {
+        float: right;
+        height: 100%;
+        width: 100%;
+        padding-left: 300px;
+        padding-right: 60px;
+        margin-top: 40px;
+        .container {
+          height: 100%;
+        }
+      }
+    }
+  }
+
   .logoContainer {
     position: absolute;
     width: 240px;
     height: 60px;
     text-align: center;
     line-height: 60px;
-  }
-
-  .mainContainer {
-    width: 100%;
-    padding-top: 60px;
-    .mainContent {
-      float: right;
-      width: 100%;
-      padding-left: 300px;
-      padding-right: 60px;
-      margin-top: 40px;
-    }
   }
 }
 

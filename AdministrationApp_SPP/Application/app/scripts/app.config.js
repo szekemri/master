@@ -6,7 +6,8 @@
 (function () {
   angular.module('administrationApp')
     .config(stateConfig)
-    .config(httpConfig);
+    .config(httpConfig)
+    .config(resourceConfig);
     // .config(materialThemeConfig);
 
   /**
@@ -53,6 +54,18 @@
     $httpProvider.defaults.headers.common = {
       'Content-Type': 'application/json; charset=utf-8',
       'Response-Type': 'json'
+    };
+  }
+
+  resourceConfig.$inject = ['$resourceProvider'];
+  function resourceConfig($resourceProvider) {
+
+    $resourceProvider.defaults.actions.put = {
+      method: 'PUT'
+    };
+
+    $resourceProvider.defaults.actions.post = {
+      method: 'POST'
     };
   }
 
