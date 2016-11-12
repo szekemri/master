@@ -5,10 +5,10 @@
 
 (function () {
   angular.module('administrationApp')
-    .controller('myAccountController', myAccountController);
+    .controller('userAccountController', userAccountController);
 
-  myAccountController.$inject = ['$scope', 'administrationService', '$resource'];
-  function myAccountController($scope, administrationService, $resource) {
+  userAccountController.$inject = ['$scope', 'administrationService', '$resource'];
+  function userAccountController($scope, administrationService, $resource) {
     $scope.user = administrationService.getUserDetails();
 
     $scope.saveUserDetails = function () {

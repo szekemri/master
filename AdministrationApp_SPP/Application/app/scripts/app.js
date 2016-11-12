@@ -18,7 +18,8 @@
       'ngSanitize',
       'ngTouch',
       'ui.router',
-      'ngMaterial'
+      'ngMaterial',
+      'angular-loading-bar'
     ])
 
     .run(['$rootScope', '$state', 'administrationService', function ($rootScope, $state, administrationService) {

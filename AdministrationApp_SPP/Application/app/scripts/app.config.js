@@ -7,7 +7,8 @@
   angular.module('administrationApp')
     .config(stateConfig)
     .config(httpConfig)
-    .config(resourceConfig);
+    .config(resourceConfig)
+    .config(progressbarConfig);
     // .config(materialThemeConfig);
 
   /**
@@ -42,10 +43,10 @@
         controller: 'generalInformationController'
       })
       .state('main.myAccount', {
-        url: '/myAccount',
-        templateUrl: 'scripts/myAccount/myAccount.html',
-        controller: 'myAccountController',
-        controllerAs: 'myAccount'
+        url: '/userAccount',
+        templateUrl: 'scripts/userAccount/userAccount.html',
+        controller: 'userAccountController',
+        controllerAs: 'userAccount'
       });
   }
 
@@ -67,6 +68,12 @@
     $resourceProvider.defaults.actions.post = {
       method: 'POST'
     };
+  }
+
+  progressbarConfig.$inject = ['cfpLoadingBarProvider'];
+  function progressbarConfig(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.parentSelector = '.loadingContainer';
+    cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner"></span></div>';
   }
 
   materialThemeConfig.$inject = ['$mdThemingProvider'];

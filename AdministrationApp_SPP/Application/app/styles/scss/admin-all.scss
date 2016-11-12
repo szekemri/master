@@ -32,6 +32,10 @@ body {
     text-align: center;
     line-height: 60px;
   }
+
+  #loading-bar .bar {
+    position: relative;
+  }
 }
 
 * {
@@ -134,7 +138,7 @@ body {
   z-index: 3;
 }
 
-// Source: app/scripts/myAccount/myAccount.style.scss
+// Source: app/scripts/userAccount/userAccount.style.scss
 .userProfile {
   .pageTitleHeader {
     height: 80px;
