@@ -22,27 +22,12 @@
     });
 
     $stateProvider
-      .state('main', {
-        abstract: true,
-        templateUrl: 'scripts/mainPage/mainPage.html',
-        controller: 'mainPageController',
-        resolve: {
-          serverData: function($resource, administrationService){
-            var urlUsers = '/api/UserConfiguration';
-
-            if (!administrationService.getServerData()) {
-              return $resource(urlUsers).get({id: 1}).$promise;
-            }
-
-          }
-        }
-      })
-      .state('main.generalInformation', {
+      .state('generalInformation', {
         url: '/generalInformation',
         templateUrl: 'scripts/generalInformation/generalInformation.html',
         controller: 'generalInformationController'
       })
-      .state('main.myAccount', {
+      .state('myAccount', {
         url: '/userAccount',
         templateUrl: 'scripts/userAccount/userAccount.html',
         controller: 'userAccountController',
@@ -72,7 +57,7 @@
 
   progressbarConfig.$inject = ['cfpLoadingBarProvider'];
   function progressbarConfig(cfpLoadingBarProvider) {
-    cfpLoadingBarProvider.parentSelector = '.loadingContainer';
+    cfpLoadingBarProvider.parentSelector = '.topBarContainer';
     cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner"></span></div>';
   }
 

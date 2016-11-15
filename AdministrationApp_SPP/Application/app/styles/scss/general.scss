@@ -2,24 +2,28 @@ body {
   margin: 0;
   height: 100%;
   background-color: #faf8f4;
-  font-family: Segoe UI,Verdana,Arial,Helvetica,sans-serif;
-  //overflow-y: scroll;
-  .abstractViewContainer {
-    height: 100%;
-    .mainContainer {
+  font-family: Segoe UI, Verdana, Arial, Helvetica, sans-serif;
+  .topBarContainer {
+    height: 60px;
+    background: #3F51B5;
+    box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.36);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  .mainContainer {
+    width: 100%;
+    padding-top: 60px;
+    height: calc(100% - 60px);
+    .mainContent {
+      float: right;
+      height: 100%;
       width: 100%;
-      padding-top: 60px;
-      height: calc(100% - 60px);
-      .mainContent {
-        float: right;
+      padding-left: 300px;
+      padding-right: 60px;
+      margin-top: 40px;
+      .container {
         height: 100%;
-        width: 100%;
-        padding-left: 300px;
-        padding-right: 60px;
-        margin-top: 40px;
-        .container {
-          height: 100%;
-        }
       }
     }
   }
@@ -34,6 +38,8 @@ body {
 
   #loading-bar .bar {
     position: relative;
+    height: 60px;
+    background: #303F9F;
   }
 }
 

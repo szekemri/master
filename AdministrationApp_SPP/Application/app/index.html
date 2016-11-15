@@ -24,9 +24,13 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <!--<div class="logoContainer">LOGO</div>-->
-    <div class="loadingContainer"></div>
-    <div class="abstractViewContainer" ui-view=""></div>
+    <div class="topBarContainer"></div>
+    <div class="mainContainer">
+      <div class="mainContent">
+        <div class="container" ui-view=""></div>
+      </div>
+    </div>
+    <left-bar class="leftWrapper"></left-bar>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -50,6 +54,7 @@
     <script src="bower_components/material-design-lite/material.min.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <!--<script src="bower_components/ag-grid/main.js"></script>-->
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -58,13 +63,11 @@
     <script src="scripts/app.config.js"></script>
     <!-- components -->
     <script src="scripts/components/leftBar/leftBar.component.js"></script>
-    <script src="scripts/components/topBar/topBar.component.js"></script>
     <!-- end components -->
 
     <!-- routes -->
     <script src="scripts/generalInformation/generalInformation.controller.js"></script>
     <script src="scripts/userAccount/userAccount.controller.js"></script>
-    <script src="scripts/mainPage/mainPage.controller.js"></script>
     <!-- end routes-->
 
     <script src="scripts/service/administrationService.js"></script>

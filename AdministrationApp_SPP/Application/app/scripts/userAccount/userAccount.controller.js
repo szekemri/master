@@ -7,9 +7,8 @@
   angular.module('administrationApp')
     .controller('userAccountController', userAccountController);
 
-  userAccountController.$inject = ['$scope', 'administrationService', '$resource'];
-  function userAccountController($scope, administrationService, $resource) {
-    $scope.user = administrationService.getUserDetails();
+  userAccountController.$inject = ['$scope', '$resource'];
+  function userAccountController($scope, $resource) {
 
     $scope.saveUserDetails = function () {
       $resource('/api/Users').put({

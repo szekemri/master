@@ -8,7 +8,7 @@
       <md-menu-content class="menuContent">
         <div ng-repeat="item in userConfig.userMenu">
           <md-menu-item>
-            <md-button class="menuItemButton" ui-sref="main.{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
+            <md-button class="menuItemButton" ui-sref="{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
               <i class="material-icons menuItemGlyph">{{item.GlyphCode}}</i>
               {{item.MenuItemText}}
             </md-button>
@@ -19,7 +19,7 @@
   </div>
   <div class="mainLeftMenu">
     <div ng-repeat="item in userConfig.leftMenu">
-      <md-button class="menuItem" ui-sref="main.{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
+      <md-button class="menuItem" ui-sref="{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
         <md-tooltip class="tooltip" md-direction="right">{{item.MenuItemText}}</md-tooltip>
         <i class="material-icons glyph">{{item.GlyphCode}}</i>
       </md-button>

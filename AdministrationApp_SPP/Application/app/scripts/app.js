@@ -19,7 +19,8 @@
       'ngTouch',
       'ui.router',
       'ngMaterial',
-      'angular-loading-bar'
+      'angular-loading-bar',
+      // 'agGrid'
     ])
 
     .run(['$rootScope', '$state', 'administrationService', function ($rootScope, $state, administrationService) {

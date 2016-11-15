@@ -10,16 +10,18 @@
       controller: leftBarController
     });
 
-  leftBarController.$inject = ['$scope', '$resource', 'administrationService'];
-  function leftBarController($scope, $resource, administrationService) {
+  leftBarController.$inject = ['$scope', '$resource'];
+  function leftBarController($scope, $resource) {
 
-    var serverData = administrationService.getServerData();
+    var urlUsers = '/api/UserConfiguration';
 
-    $scope.userConfig = {
-      userDetails: serverData.userDetails,
-      userMenu: serverData.userConfigurationMenuItems,
-      leftMenu: serverData.leftMenuItems
-    };
+    $resource(urlUsers).get({id: 1}, function (serverData) {
+      $scope.userConfig = {
+        userDetails: serverData.results.userDetails,
+        userMenu: serverData.results.userConfigurationMenuItems,
+        leftMenu: serverData.results.leftMenuItems
+      };
+    });
 
     $scope.openMenu = function($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
