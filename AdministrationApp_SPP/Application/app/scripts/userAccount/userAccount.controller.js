@@ -12,8 +12,7 @@
 
     $scope.saveUserDetails = function () {
       $resource('/api/Users').put({
-        users: $scope.user,
-        id: $scope.user.UserID
+        users: $scope.user
       }, function (response) {
       });
     };

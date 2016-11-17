@@ -22,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -188,7 +189,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RootFormatter.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -204,7 +204,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\UserBuildingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuItemsController.cs" />
@@ -215,7 +214,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AccountModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\MenuItemsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -908,6 +909,11 @@
     <Content Include="Application\app\scripts\components\leftBar\leftBar.template.html" />
     <Content Include="Application\app\scripts\components\topBar\topBar.component.js" />
     <Content Include="Application\app\scripts\components\topBar\topBar.template.html" />
+    <Content Include="Application\app\scripts\generalInformation\generalInformation.controller.js" />
+    <Content Include="Application\app\scripts\generalInformation\generalInformation.html" />
+    <Content Include="Application\app\scripts\service\administrationService.js" />
+    <Content Include="Application\app\scripts\userAccount\userAccount.controller.js" />
+    <Content Include="Application\app\scripts\userAccount\userAccount.html" />
     <Content Include="Application\app\styles\admin-all.css" />
     <Content Include="Application\app\views\main.html" />
     <Content Include="Application\Gruntfile.js" />
@@ -22767,6 +22773,7 @@
       <DependentUpon>UsersModel.edmx</DependentUpon>
       <LastGenOutput>UsersModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Application\app\scripts\userAccount\userAccount.style.scss" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -22832,6 +22839,8 @@
     <Content Include="Views\Home\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\app\scripts\mainPage\" />
+    <Folder Include="Application\app\scripts\myAccount\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

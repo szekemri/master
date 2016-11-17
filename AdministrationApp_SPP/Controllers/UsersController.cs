@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using AdministrationApp_SPP.Models;
+using Newtonsoft.Json.Linq;
 
 namespace AdministrationApp_SPP.Controllers
 {
@@ -35,19 +36,16 @@ namespace AdministrationApp_SPP.Controllers
         }
 
         // PUT api/Users/5
-        public HttpResponseMessage PutUsers(int id, Users users)
+        public HttpResponseMessage PutUsers(JObject data)
         {
+            Users user = data["user"].ToObject<Users>();
+
             if (!ModelState.IsValid)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
 
-            if (id != users.UserID)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-
-            db.Entry(users).State = EntityState.Modified;
+            db.Entry(user).State = EntityState.Modified;
 
             try
             {
