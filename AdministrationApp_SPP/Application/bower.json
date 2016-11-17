@@ -28,5 +28,11 @@
   },
   "appPath": "app",
   "moduleName": "administrationApp",
-  "overrides": {}
+  "overrides": {
+    "ag-grid": {
+      "main": [
+        "./dist/ag-grid.js"
+      ]
+    }
+  }
 }
