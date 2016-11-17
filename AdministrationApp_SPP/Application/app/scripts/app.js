@@ -9,6 +9,7 @@
  * Main module of the application.
  */
 (function () {
+  agGrid.initialiseAgGridWithAngular1(angular);
   angular
     .module('administrationApp', [
       'ngAnimate',
@@ -20,7 +21,7 @@
       'ui.router',
       'ngMaterial',
       'angular-loading-bar',
-      // 'agGrid'
+      'agGrid'
     ])
 
     .run(['$rootScope', '$state', 'administrationService', function ($rootScope, $state, administrationService) {

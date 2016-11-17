@@ -39,6 +39,6 @@
   },
   "scripts": {
     "install-global": "npm install -g bower grunt eslint",
-    "postinstall": "bower install"
+    "postinstall": "npm run install-global && bower install"
   }
 }
