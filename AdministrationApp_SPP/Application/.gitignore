@@ -30,7 +30,7 @@ build/Release
 jspm_packages
 .idea
 .sass-cache
-dist
+
 
 # Optional npm cache directory
 .npm
