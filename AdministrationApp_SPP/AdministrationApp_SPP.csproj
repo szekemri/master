@@ -280,7 +280,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
     <Content Include="Application\app\404.html" />
     <Content Include="Application\app\bower_components\angular-animate\angular-animate.js" />
     <Content Include="Application\app\bower_components\angular-animate\angular-animate.min.js" />
@@ -913,6 +912,8 @@
     <Content Include="Application\app\scripts\components\browserSync.js" />
     <Content Include="Application\app\scripts\components\leftBar\leftBar.component.js" />
     <Content Include="Application\app\scripts\components\leftBar\leftBar.template.html" />
+    <Content Include="Application\app\scripts\components\topBar\topBar.component.js" />
+    <Content Include="Application\app\scripts\components\topBar\topBar.template.html" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.controller.js" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.html" />
     <Content Include="Application\app\scripts\service\administrationService.js" />
@@ -17387,6 +17388,7 @@
     <Content Include="Application\app\bower_components\underscore\README.md" />
     <Content Include="Application\app\bower_components\underscore\underscore-min.map" />
     <Content Include="Application\app\scripts\components\leftBar\leftBar.scss" />
+    <Content Include="Application\app\scripts\components\topBar\topBar.scss" />
     <Content Include="Application\app\styles\admin-all.css.map" />
     <Content Include="Application\app\styles\scss\admin-all.scss" />
     <Content Include="Application\app\styles\scss\general.scss" />
