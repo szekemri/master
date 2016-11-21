@@ -921,6 +921,10 @@
     <Content Include="Application\app\scripts\userAccount\userAccount.html" />
     <Content Include="Application\app\styles\admin-all.css" />
     <Content Include="Application\app\views\main.html" />
+    <Content Include="Application\dist\404.html" />
+    <Content Include="Application\dist\favicon.ico" />
+    <Content Include="Application\dist\index.html" />
+    <Content Include="Application\dist\robots.txt" />
     <Content Include="Application\Gruntfile.js" />
     <Content Include="Application\grunt\configs\browserSync.js" />
     <Content Include="Application\grunt\configs\clean.js" />
@@ -1282,7 +1286,6 @@
     <Content Include="Application\app\styles\admin-all.css.map" />
     <Content Include="Application\app\styles\scss\admin-all.scss" />
     <Content Include="Application\app\styles\scss\general.scss" />
-    <Content Include="Application\app\styles\scss\main.scss" />
     <Content Include="Application\bower.json" />
     <Content Include="Application\package.json" />
     <Content Include="Application\README.md" />
@@ -1409,6 +1412,9 @@
     <Folder Include="Application\app\scripts\components\topBar\" />
     <Folder Include="Application\app\scripts\mainPage\" />
     <Folder Include="Application\app\scripts\myAccount\" />
+    <Folder Include="Application\dist\images\" />
+    <Folder Include="Application\dist\scripts\" />
+    <Folder Include="Application\dist\styles\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
