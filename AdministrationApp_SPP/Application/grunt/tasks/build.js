@@ -16,6 +16,7 @@ module.exports = function (grunt) {
     'postcss',
     'ngAnnotate',
     'copy:dist',
+    'cssmin',
     'uglify',
     'filerev',
     'usemin',
