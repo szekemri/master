@@ -6,7 +6,7 @@
 module.exports = {
   dist: {
     options: {
-      module: 'invoicing',
+      module: 'administrationApp',
       htmlmin: '<%= htmlmin.dist.options %>',
       usemin: 'scripts/scripts.js'
     },
