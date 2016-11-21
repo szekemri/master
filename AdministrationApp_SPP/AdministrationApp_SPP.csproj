@@ -280,6 +280,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
     <Content Include="Application\app\404.html" />
     <Content Include="Application\app\bower_components\angular-animate\angular-animate.js" />
     <Content Include="Application\app\bower_components\angular-animate\angular-animate.min.js" />
