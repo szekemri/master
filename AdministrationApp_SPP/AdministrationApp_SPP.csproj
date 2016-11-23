@@ -1001,11 +1001,17 @@
     <Content Include="bin\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
     <Content Include="bin\Microsoft.Web.WebPages.OAuth.dll" />
     <Content Include="bin\Microsoft.Web.WebPages.OAuth.xml" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\MySql.Data.Entity.dll" />
+    <Content Include="bin\MySql.Data.xml" />
+    <Content Include="bin\MySql.Web.dll" />
+    <Content Include="bin\MySql.Web.xml" />
     <Content Include="bin\Newtonsoft.Json.dll" />
     <Content Include="bin\Newtonsoft.Json.xml" />
     <Content Include="bin\ru\Microsoft.Data.Edm.resources.dll" />
     <Content Include="bin\ru\Microsoft.Data.OData.resources.dll" />
     <Content Include="bin\ru\System.Spatial.resources.dll" />
+    <Content Include="bin\System.Data.dll" />
     <Content Include="bin\System.Spatial.dll" />
     <Content Include="bin\System.Spatial.xml" />
     <Content Include="bin\System.Web.dll" />
