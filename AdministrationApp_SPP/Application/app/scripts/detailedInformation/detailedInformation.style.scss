@@ -1,0 +1,9 @@
+.detailedInformation {
+  height: 100%;
+  .pageTitleHeader {
+    &:before {
+      content: 'description';
+    }
+  }
+}
+

@@ -30,8 +30,12 @@
       .state('myAccount', {
         url: '/userAccount',
         templateUrl: 'scripts/userAccount/userAccount.html',
-        controller: 'userAccountController',
-        controllerAs: 'userAccount'
+        controller: 'userAccountController'
+      })
+      .state('detailedInformation', {
+        url: '/detailedInformation',
+        templateUrl: 'scripts/detailedInformation/detailedInformation.html',
+        controller: 'detailedInformationController'
       });
   }
 

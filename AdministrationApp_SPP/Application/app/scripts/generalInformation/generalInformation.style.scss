@@ -1,0 +1,9 @@
+.generalInformation {
+  height: 100%;
+  .pageTitleHeader {
+    &:before {
+      content: 'library_books';
+    }
+  }
+}
+
