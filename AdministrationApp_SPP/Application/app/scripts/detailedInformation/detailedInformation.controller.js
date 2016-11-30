@@ -9,6 +9,6 @@
 
   detailedInformationController.$inject = ['$scope'];
   function detailedInformationController($scope) {
-
+    $scope.test = 'TEST build';
   }
 })();
