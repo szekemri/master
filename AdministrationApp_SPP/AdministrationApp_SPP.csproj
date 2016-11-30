@@ -931,6 +931,8 @@
     <Content Include="Application\app\scripts\components\browserSync.js" />
     <Content Include="Application\app\scripts\components\leftBar\leftBar.component.js" />
     <Content Include="Application\app\scripts\components\leftBar\leftBar.template.html" />
+    <Content Include="Application\app\scripts\detailedInformation\detailedInformation.controller.js" />
+    <Content Include="Application\app\scripts\detailedInformation\detailedInformation.html" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.controller.js" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.html" />
     <Content Include="Application\app\scripts\service\administrationService.js" />
@@ -1375,6 +1377,10 @@
     </Content>
     <Content Include="Application\app\scripts\userAccount\userAccount.style.scss" />
     <Content Include="bin\AdministrationApp_SPP.dll.config" />
+    <Content Include="Application\app\scripts\detailedInformation\detailedInformation.style.scss" />
+    <Content Include="Application\app\scripts\generalInformation\generalInformation.style.scss" />
+    <Content Include="Application\.deployment" />
+    <Content Include="Application\deploy.cmd" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -1440,9 +1446,6 @@
     <Content Include="Views\Home\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Application\app\scripts\components\topBar\" />
-    <Folder Include="Application\app\scripts\mainPage\" />
-    <Folder Include="Application\app\scripts\myAccount\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
