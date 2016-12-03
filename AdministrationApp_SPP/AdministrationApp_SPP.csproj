@@ -1379,8 +1379,6 @@
     <Content Include="bin\AdministrationApp_SPP.dll.config" />
     <Content Include="Application\app\scripts\detailedInformation\detailedInformation.style.scss" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.style.scss" />
-    <Content Include="Application\.deployment" />
-    <Content Include="Application\deploy.cmd" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
