@@ -193,6 +193,9 @@ body {
 
 // Source: app/scripts/generalInformation/generalInformation.style.scss
 .generalInformation {
+  .testDiv {
+    color: red;
+  }
   height: 100%;
   .pageTitleHeader {
     &:before {
