@@ -42,7 +42,4 @@
     "install-global": "npm install -g bower grunt eslint",
     "postinstall": "bower install"
   }
-
-
-
 }
