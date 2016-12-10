@@ -942,14 +942,8 @@
     <Content Include="Application\app\views\main.html" />
     <Content Include="Application\dist\404.html" />
     <Content Include="Application\dist\favicon.ico" />
-    <Content Include="Application\dist\images\user.201612052238.png" />
-    <Content Include="Application\dist\images\yeoman.201612052238.png" />
     <Content Include="Application\dist\index.html" />
     <Content Include="Application\dist\robots.txt" />
-    <Content Include="Application\dist\scripts\scripts.201612052238.js" />
-    <Content Include="Application\dist\scripts\vendor.201612052238.js" />
-    <Content Include="Application\dist\styles\main.201612052238.css" />
-    <Content Include="Application\dist\styles\vendor.201612052238.css" />
     <Content Include="Application\Gruntfile.js" />
     <Content Include="Application\grunt\configs\browserSync.js" />
     <Content Include="Application\grunt\configs\clean.js" />
@@ -1444,6 +1438,9 @@
     <Content Include="Views\Home\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\dist\images\" />
+    <Folder Include="Application\dist\scripts\" />
+    <Folder Include="Application\dist\styles\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
