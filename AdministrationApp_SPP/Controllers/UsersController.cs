@@ -24,9 +24,9 @@ namespace AdministrationApp_SPP.Controllers
         }
 
         // GET api/Users/5
-        public Users GetUsers(int id)
+        public Users GetUsers(int userId)
         {
-            Users users = db.Users.Find(id);
+            Users users = db.Users.Find(userId);
             if (users == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));

@@ -14,7 +14,7 @@
   function leftBarController($scope, $resource) {
 
     var menuItemsUrl = '/api/MenuItems';
-    $resource(menuItemsUrl).get({userId: 1}, function (serverData) {
+    $resource(menuItemsUrl).get({userId: 7}, function (serverData) {
       var results = serverData.results;
 
       $scope.menuItems = {
@@ -23,12 +23,12 @@
       };
     });
 
-    var userDetailsUrl = '/api/UserDetails';
-    $resource(userDetailsUrl).get({userId: 1}, function (serverData) {
-      var results = serverData.results;
+    var userDetailsUrl = '/api/Users';
+    $resource(userDetailsUrl).get({userId: 7}, function (serverData) {
+      var results = serverData.result;
 
       $scope.user = {
-        userDetails: results.userDetails
+          userDetails: results
       };
     });
 

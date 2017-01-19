@@ -922,6 +922,7 @@
     <Content Include="Application\app\bower_components\underscore\underscore-min.js" />
     <Content Include="Application\app\bower_components\underscore\underscore.js" />
     <Content Include="Application\app\favicon.ico" />
+    <Content Include="Application\app\images\user-female.png" />
     <Content Include="Application\app\images\user.png" />
     <Content Include="Application\app\images\yeoman.png" />
     <Content Include="Application\app\index.html" />

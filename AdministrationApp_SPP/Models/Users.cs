@@ -9,9 +9,11 @@
 
 namespace AdministrationApp_SPP.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
+    [JsonObject(Title = "results")]
     public partial class Users
     {
         public int UserID { get; set; }
