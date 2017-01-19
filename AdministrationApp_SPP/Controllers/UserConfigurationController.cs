@@ -17,20 +17,5 @@ namespace AdministrationApp_SPP.Controllers
         UserBuildingViewController userBuilduingController = new UserBuildingViewController();
         MenuItemsController menuItemsController = new MenuItemsController();
         UserBuildingView userBuilduingViewDetails = new UserBuildingView();
-
-        // GET api/userconfiguration/5
-        //public MenuItems GetMenuItems(int userID)
-        //{
-        //    ////Get User details (including user corresponding building)
-        //    //userBuilduingViewDetails = userBuilduingController.GetUserBuildingView(userID);
-
-        //    IsAdministrator = userBuilduingViewDetails.IsAdministrator;
-
-        //    //Get Menu Items return an UserConfiguration object
-        //    menuItems = menuItemsController.GetMenuItems(IsAdministrator, userBuilduingViewDetails);
-
-        //    return menuItems;
-        //}
-
     }
 }

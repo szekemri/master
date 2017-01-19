@@ -11,12 +11,13 @@ namespace AdministrationApp_SPP.Controllers
 {
     public class MenuItemsController : ApiController
     {
-        private MenuItemsDBEntities db = new MenuItemsDBEntities();
+        private MenuItemsDBEntities menuItemsDBEntities = new MenuItemsDBEntities();
+        private UserBuildingView userBuildingView = new UserBuildingView();
 
         // GET api/MenuItems
         public IEnumerable<MenuItemsView> GetMenuItems()
         {
-            return db.MenuItemsView.AsEnumerable();
+            return menuItemsDBEntities.MenuItemsView.AsEnumerable();
         }
 
         /// <summary>
@@ -24,28 +25,37 @@ namespace AdministrationApp_SPP.Controllers
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
-        public MenuItems GetMenuItems(int? userID)
+        public MenuItems GetMenuItems(int userID)
         {
             //create instance of user configuration class/object
             MenuItems menuItems = new MenuItems();
+            bool userHasAdminRights;
 
-            //initialize menuitems
-            menuItems.userMenuItems = db.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 2).ToList();
-            menuItems.leftMenuItems = db.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 3).ToList();
+            //get user details
+            userBuildingView = this.GetUserInformations(userID);
+            userHasAdminRights = this.CheckIfUserHasAdminRights(userBuildingView);
 
-            //get user and user right from DB
+            //filter menuItems based on user rights
+            this.FilterMenuItemsBasedOnUserRight(true, ref menuItems);
 
-            //check user rights and filter menuItems based on them
-            FilterMenuItemsBasedOnUserRight(true, ref menuItems);
-
-            //check if records were found
-            if (menuItems.userMenuItems.Count == 0 || menuItems.leftMenuItems.Count == 0)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-            }
+            //check if menu items are valid, otherwise throw exception
+            this.CheckIfMenuItemsAreValid(menuItems);
 
             //create list of list
             return menuItems;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userBuildingView"></param>
+        private bool CheckIfUserHasAdminRights(UserBuildingView userBuildingView)
+        {
+            if (userBuildingView.IsAdministrator == true)
+            {
+                return true;
+            }
+            else return false;
         }
 
         /// <summary>
@@ -53,9 +63,11 @@ namespace AdministrationApp_SPP.Controllers
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
-        private UserBuildingView GetUserInformations(int? userID) {
-            UserBuildingView userInformations = new UserBuildingView();
-            return userInformations;
+        private UserBuildingView GetUserInformations(int userID) {
+
+            //instantiate UserBuildingController
+            UserBuildingViewController userBuildingView = new UserBuildingViewController();
+            return userBuildingView.GetUserBuildingView(userID);
         }
 
         /// <summary>
@@ -63,6 +75,10 @@ namespace AdministrationApp_SPP.Controllers
         /// </summary>
         /// <returns></returns>
         private MenuItems FilterMenuItemsBasedOnUserRight(bool? IsAdministrator, ref MenuItems menuItems) {
+
+            //initialize menu items and first filter for existing menus (top menu, left menu, etc)
+            menuItems.userMenuItems = menuItemsDBEntities.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 2).ToList();
+            menuItems.leftMenuItems = menuItemsDBEntities.MenuItemsView.ToList().Where(x => x.ApplicationMenuID == 3).ToList();
 
             //check if user has administrator rights
             if (IsAdministrator == false)
@@ -73,6 +89,18 @@ namespace AdministrationApp_SPP.Controllers
             }
 
             return menuItems;
+        }
+
+        /// <summary>
+        /// Check if menu items were found in the database.
+        /// </summary>
+        private void CheckIfMenuItemsAreValid(MenuItems menuItems)
+        {
+            //check if records were found
+            if (menuItems.userMenuItems.Count == 0 || menuItems.leftMenuItems.Count == 0)
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+            }
         }
     }
 }
