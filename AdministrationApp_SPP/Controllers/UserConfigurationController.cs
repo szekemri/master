@@ -8,27 +8,29 @@ using System.Web.Http;
 
 namespace AdministrationApp_SPP.Controllers
 {
-    public class UserConfigurationController : ApiController
+    public class ApplicationConfigurationController : ApiController
     {
         private bool? IsAdministrator = false;
 
         //UserConfiguration class contains all user details (including the menu items user has access to)
-        UserConfiguration userConfiguration = new UserConfiguration();
+        MenuItems menuItems = new MenuItems();
         UserBuildingViewController userBuilduingController = new UserBuildingViewController();
         MenuItemsController menuItemsController = new MenuItemsController();
         UserBuildingView userBuilduingViewDetails = new UserBuildingView();
 
         // GET api/userconfiguration/5
-        public UserConfiguration GetUserConfiguration(int id)
-        {
-            //Get User details (including user corresponding building)
-            userBuilduingViewDetails = userBuilduingController.GetUserBuildingView(id);
-            IsAdministrator = userBuilduingViewDetails.IsAdministrator;
-            //Get Menu Items return an UserConfiguration object
-            userConfiguration = menuItemsController.GetMenuItems(IsAdministrator, userBuilduingViewDetails);
-                
-            return userConfiguration;
-        }
+        //public MenuItems GetMenuItems(int userID)
+        //{
+        //    ////Get User details (including user corresponding building)
+        //    //userBuilduingViewDetails = userBuilduingController.GetUserBuildingView(userID);
+
+        //    IsAdministrator = userBuilduingViewDetails.IsAdministrator;
+
+        //    //Get Menu Items return an UserConfiguration object
+        //    menuItems = menuItemsController.GetMenuItems(IsAdministrator, userBuilduingViewDetails);
+
+        //    return menuItems;
+        //}
 
     }
 }
