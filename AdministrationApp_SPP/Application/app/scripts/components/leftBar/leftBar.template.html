@@ -3,10 +3,10 @@
     <md-menu class="userMenu" md-offset="54 54">
       <span ng-click="openMenu($mdOpenMenu, $event)">
         <img class="userPicture" src="images/user.png">
-        <div class="name">{{userConfig.userDetails.FirstName}} {{userConfig.userDetails.LastName}}</div>
+        <div class="name">{{user.userDetails.FirstName}} {{user.userDetails.LastName}}</div>
       </span>
       <md-menu-content class="menuContent">
-        <div ng-repeat="item in userConfig.userMenu">
+        <div ng-repeat="item in menuItems.userMenu">
           <md-menu-item>
             <md-button class="menuItemButton" ui-sref="{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
               <i class="material-icons menuItemGlyph">{{item.GlyphCode}}</i>
@@ -18,7 +18,7 @@
     </md-menu>
   </div>
   <div class="mainLeftMenu">
-    <div ng-repeat="item in userConfig.leftMenu">
+    <div ng-repeat="item in menuItems.leftMenu">
       <md-button class="menuItem" ui-sref="{{item.MenuItemType}}" ui-sref-opts="{reload: true}">
         <md-tooltip class="tooltip" md-direction="right">{{item.MenuItemText}}</md-tooltip>
         <i class="material-icons glyph">{{item.GlyphCode}}</i>

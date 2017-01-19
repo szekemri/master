@@ -37,14 +37,12 @@ body {
   .mainContainer {
     width: 100%;
     padding-top: 60px;
-    height: calc(100% - 60px);
+    height: 100%;
     .mainContent {
       float: right;
       height: 100%;
       width: 100%;
-      padding-left: 300px;
-      padding-right: 60px;
-      margin-top: 40px;
+      padding-left: 240px;
       .container {
         height: 100%;
         .delimiterLine {

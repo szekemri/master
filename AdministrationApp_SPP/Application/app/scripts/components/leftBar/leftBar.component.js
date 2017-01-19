@@ -13,13 +13,22 @@
   leftBarController.$inject = ['$scope', '$resource'];
   function leftBarController($scope, $resource) {
 
-    var urlUsers = '/api/UserConfiguration';
+    var menuItemsUrl = '/api/MenuItems';
+    $resource(menuItemsUrl).get({userId: 1}, function (serverData) {
+      var results = serverData.results;
 
-    $resource(urlUsers).get({id: 1}, function (serverData) {
-      $scope.userConfig = {
-        userDetails: serverData.results.userDetails,
-        userMenu: serverData.results.userConfigurationMenuItems,
-        leftMenu: serverData.results.leftMenuItems
+      $scope.menuItems = {
+        userMenu: results.userMenuItems,
+        leftMenu: results.leftMenuItems
+      };
+    });
+
+    var userDetailsUrl = '/api/UserDetails';
+    $resource(userDetailsUrl).get({userId: 1}, function (serverData) {
+      var results = serverData.results;
+
+      $scope.user = {
+        userDetails: results.userDetails
       };
     });
 
