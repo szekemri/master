@@ -25,10 +25,10 @@
 
     var userDetailsUrl = '/api/Users';
     $resource(userDetailsUrl).get({userId: 7}, function (serverData) {
-      var results = serverData.result;
+      var serverResult = serverData.results;
 
       $scope.user = {
-          userDetails: results
+          userDetails: serverResult
       };
     });
 
