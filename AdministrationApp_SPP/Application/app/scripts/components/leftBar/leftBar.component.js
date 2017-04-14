@@ -25,11 +25,7 @@
 
     var userDetailsUrl = '/api/Users';
     $resource(userDetailsUrl).get({userId: 7}, function (serverData) {
-      var serverResult = serverData.results;
-
-      $scope.user = {
-          userDetails: serverResult
-      };
+      $scope.userDetails = serverData.results;
     });
 
     $scope.openMenu = function($mdOpenMenu, ev) {

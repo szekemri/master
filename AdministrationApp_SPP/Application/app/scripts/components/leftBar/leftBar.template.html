@@ -3,7 +3,7 @@
     <md-menu class="userMenu" md-offset="54 54">
       <span ng-click="openMenu($mdOpenMenu, $event)">
           <img class="userPicture" src="images/user-female.png">
-        <div class="name">{{user.userDetails.FirstName}} {{user.userDetails.LastName}}</div>
+        <div class="name">{{userDetails.FirstName}} {{userDetails.LastName}}</div>
       </span>
       <md-menu-content class="menuContent">
         <div ng-repeat="item in menuItems.userMenu">

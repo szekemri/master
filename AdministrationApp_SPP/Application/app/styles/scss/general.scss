@@ -47,11 +47,14 @@ body {
         .delimiterLine {
           border-top: 2px solid #ccc;
         }
-        .pageTitleHeader {
-          height: 80px;
-          line-height: 80px;
-          margin-left: 30px;
+        .pageHeader {
+          position: relative;
+          line-height: 70px;
+          margin-left: 10px;
+          margin-right: 10px;
           font-size: 25px;
+          z-index: 2;
+          background-color: white;
           padding: 0;
           &:before {
             font-family: "Material Icons";
@@ -60,13 +63,10 @@ body {
             top: 10px;
             font-size: 55px;
           }
-          .pageHeader {
+          .pageTitle {
             margin-left: 70px;
             display: inline-block;
           }
-        }
-        .delimiterLine {
-          border-top: 2px solid #ccc;
         }
       }
     }
