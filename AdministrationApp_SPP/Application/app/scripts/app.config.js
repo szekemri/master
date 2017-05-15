@@ -9,7 +9,7 @@
     .config(httpConfig)
     .config(resourceConfig)
     .config(progressbarConfig);
-    // .config(materialThemeConfig);
+  // .config(materialThemeConfig);
 
   /**
    * State config injection + method
@@ -18,24 +18,36 @@
   stateConfig.$inject = ['$urlRouterProvider', '$stateProvider'];
   function stateConfig($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise(function () {
-      return 'generalInformation';
+      return 'login';
     });
 
     $stateProvider
+      .state('mainView', {
+        url: '/mainView',
+        templateUrl: 'scripts/mainView/mainView.template.html'
+      })
       .state('generalInformation', {
-        url: '/generalInformation',
+        url: 'generalInformation',
         templateUrl: 'scripts/generalInformation/generalInformation.html',
-        controller: 'generalInformationController'
+        controller: 'generalInformationController',
+        parent: 'mainView'
       })
       .state('myAccount', {
-        url: '/userAccount',
+        url: 'userAccount',
         templateUrl: 'scripts/userAccount/userAccount.html',
-        controller: 'userAccountController'
+        controller: 'userAccountController',
+        parent: 'mainView'
       })
       .state('detailedInformation', {
-        url: '/detailedInformation',
+        url: 'detailedInformation',
         templateUrl: 'scripts/detailedInformation/detailedInformation.html',
-        controller: 'detailedInformationController'
+        controller: 'detailedInformationController',
+        parent: 'mainView'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'scripts/login/login.template.html',
+        controller: 'loginController'
       });
   }
 
@@ -63,29 +75,6 @@
   function progressbarConfig(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.parentSelector = '.topBarContainer';
     cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner"></span></div>';
-  }
-
-  materialThemeConfig.$inject = ['$mdThemingProvider'];
-  function materialThemeConfig($mdThemingProvider) {
-    $mdThemingProvider.theme('default')
-      .primaryPalette('blue', {
-        'default': '400', // by default use shade 400 from the blue palette for primary intentions
-        'hue-1': '500', // use shade 100 for the <code>md-hue-1</code> class
-        'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-        'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
-      })
-      // If you specify less than all of the keys, it will inherit from the
-      // default shades
-      .accentPalette('purple', {
-        'default': '200' // use shade 200 for default, and keep all other shades the same
-      })
-
-      .backgroundPalette('grey', {
-        'default': '400', // by default use shade 400 from the blue palette for primary intentions
-        'hue-1': '500', // use shade 100 for the <code>md-hue-1</code> class
-        'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-        'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
-      });
   }
 })();
 
