@@ -1,10 +1,10 @@
 <div class="leftMenuContainer">
   <div class="userDetails">
     <md-menu class="userMenu" md-offset="54 54">
-      <span ng-click="openMenu($mdOpenMenu, $event)">
+      <div ng-click="openMenu($mdOpenMenu, $event)">
           <img class="userPicture" src="images/user-female.png">
         <div class="name">{{userDetails.FirstName}} {{userDetails.LastName}}</div>
-      </span>
+      </div>
       <md-menu-content class="menuContent">
         <div ng-repeat="item in menuItems.userMenu">
           <md-menu-item>

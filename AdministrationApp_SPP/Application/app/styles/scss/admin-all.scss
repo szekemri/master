@@ -183,7 +183,7 @@ body {
 // Source: app/scripts/detailedInformation/detailedInformation.style.scss
 .detailedInformation {
   height: 100%;
-  .pageTitleHeader {
+  .pageHeader {
     &:before {
       content: 'description';
     }
@@ -193,9 +193,6 @@ body {
 
 // Source: app/scripts/generalInformation/generalInformation.style.scss
 .generalInformation {
-  .testDiv {
-    color: red;
-  }
   height: 100%;
   .pageHeader {
     &:before {
