@@ -3,10 +3,15 @@
   max-width: 500px;
   margin: 0 auto;
   position: relative;
-  top: 300px;
+  top: 20%;
+  opacity: 0.93;
   .loginInput {
     margin-left: 40px;
     margin-right: 40px;
+    label {
+      font-weight: 500;
+      font-size: 15px;
+    }
   }
 }
 
