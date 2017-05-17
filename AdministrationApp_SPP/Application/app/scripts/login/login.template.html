@@ -1,4 +1,20 @@
-<md-button class="menuItemButton" ui-sref="myAccount" ui-sref-opts="{reload: true}">
-  <i class="material-icons">home</i>
-  Login
-</md-button>
+<div class="loginContainer">
+  <form class="loginWrapper">
+    <md-content layout="column">
+      <md-input-container class="loginInput">
+        <label>Usename</label>
+        <input ng-model="username">
+      </md-input-container>
+
+      <md-input-container class="loginInput">
+        <label>Password</label>
+        <input ng-model="password" type="password">
+      </md-input-container>
+    </md-content>
+    <md-content layout="row">
+      <md-button class="registerButton" ng-click="registerUser()">Register</md-button>
+      <md-button type="submit" class="loginButton" ng-click="loginUser()">Login</md-button>
+    </md-content>
+  </form>
+
+</div>

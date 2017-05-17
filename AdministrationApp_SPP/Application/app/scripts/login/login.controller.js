@@ -6,8 +6,13 @@
   angular.module('administrationApp')
     .controller('loginController', loginController);
 
-  loginController.$inject = ['$scope'];
-  function loginController($scope) {
-
+  loginController.$inject = ['$scope', '$state'];
+  function loginController($scope, $state) {
+    $scope.loginUser = function () {
+      debugger;
+      if ($scope.username === 'test' && $scope.password === 'test') {
+        $state.go('generalInformation');
+      }
+    }
   }
 })();

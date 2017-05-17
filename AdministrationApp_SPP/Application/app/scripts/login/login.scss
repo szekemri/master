@@ -1,0 +1,23 @@
+.loginWrapper {
+  @include boxShadowLevel2;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  top: 300px;
+  .loginInput {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+.loginContainer {
+  background: url("images/login.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.mainPageContainer {
+  height: 100%;
+}
+
+

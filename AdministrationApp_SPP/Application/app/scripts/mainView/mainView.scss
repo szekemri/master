@@ -1,0 +1,60 @@
+.topBarContainer {
+  height: 60px;
+  background: #3F51B5;
+  box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.36);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+.mainContainer {
+  width: 100%;
+  padding-top: 60px;
+  height: 100%;
+  .mainContent {
+    float: right;
+    height: 100%;
+    width: 100%;
+    padding-left: 240px;
+    .container {
+      height: 100%;
+      .delimiterLine {
+        border-top: 2px solid #ccc;
+      }
+      .pageHeader {
+        position: relative;
+        line-height: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 25px;
+        z-index: 2;
+        background-color: white;
+        padding: 0;
+        &:before {
+          font-family: "Material Icons";
+
+          position: absolute;
+          top: 10px;
+          font-size: 55px;
+        }
+        .pageTitle {
+          margin-left: 70px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.logoContainer {
+  position: absolute;
+  width: 240px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+#loading-bar .bar {
+  position: relative;
+  height: 60px;
+  background: #303F9F;
+}
