@@ -1,20 +1,30 @@
 <div class="loginContainer">
-  <form class="loginWrapper">
+  <form name="loginForm" novalidate class="loginWrapper">
     <md-content layout="column">
+
       <md-input-container class="loginInput">
-        <label>Usename</label>
-        <input ng-model="username">
+        <label>Username</label>
+        <input name="username" ng-model="username" required>
+        <div ng-messages="loginForm.username.$error">
+          <div ng-message="required">You must enter a username.</div>
+        </div>
       </md-input-container>
 
       <md-input-container class="loginInput">
         <label>Password</label>
-        <input ng-model="password" type="password">
+        <input name="password" ng-model="password" required>
+        <div ng-messages="loginForm.password.$error">
+          <div ng-message="required">You must enter a password.</div>
+        </div>
       </md-input-container>
+
     </md-content>
-    <md-content layout="row">
+
+    <md-content class="loginToolbar" layout="row">
+
       <md-button class="registerButton" ng-click="registerUser()">Register</md-button>
-      <md-button type="submit" class="loginButton" ng-click="loginUser()">Login</md-button>
+      <md-button type="submit" class="loginButton" ng-click="loginUser($event)">Login</md-button>
+
     </md-content>
   </form>
-
 </div>
