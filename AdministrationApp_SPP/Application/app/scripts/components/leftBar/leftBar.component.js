@@ -10,8 +10,9 @@
       controller: leftBarController
     });
 
-  leftBarController.$inject = ['$scope', '$resource'];
-  function leftBarController($scope, $resource) {
+
+  leftBarController.$inject = ['$scope', '$resource', '$state'];
+  function leftBarController($scope, $resource, $state) {
 
     var menuItemsUrl = '/api/MenuItems';
     $resource(menuItemsUrl).get({userId: 7}, function (serverData) {
@@ -31,5 +32,21 @@
     $scope.openMenu = function($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
     };
+
+    $scope.menuAction = function (item) {
+      switch (item.MenuItemType) {
+        case 'logOut':
+          $state.go('login');
+          break;
+        case 'settings':
+          break;
+        case 'myAccount':
+          $state.go('myAccount', {}, { reload: true });
+          break;
+        case 'adminZone':
+        default:
+          $state.go('login');
+      }
+    }
   }
 })();

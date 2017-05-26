@@ -9,7 +9,6 @@
     .config(httpConfig)
     .config(resourceConfig)
     .config(progressbarConfig);
-  // .config(materialThemeConfig);
 
   /**
    * State config injection + method
@@ -27,19 +26,19 @@
         templateUrl: 'scripts/mainView/mainView.template.html'
       })
       .state('generalInformation', {
-        url: 'generalInformation',
+        url: '/generalInformation',
         templateUrl: 'scripts/generalInformation/generalInformation.html',
         controller: 'generalInformationController',
         parent: 'mainView'
       })
       .state('myAccount', {
-        url: 'userAccount',
+        url: '/userAccount',
         templateUrl: 'scripts/userAccount/userAccount.html',
         controller: 'userAccountController',
         parent: 'mainView'
       })
       .state('detailedInformation', {
-        url: 'detailedInformation',
+        url: '/detailedInformation',
         templateUrl: 'scripts/detailedInformation/detailedInformation.html',
         controller: 'detailedInformationController',
         parent: 'mainView'
