@@ -27,7 +27,7 @@
      * @return {void}
      */
     $scope.checkKeyValidity = function () {
-      var url = '';
+      var url = 'resources/userDetails.json';
 
       if ($scope.registerForm.keyCode.$valid) {
         $resource(url).get(
@@ -36,14 +36,14 @@
           },
           function (response) {
             if (response.valid){
-              $scope.keyValid = true;
+              me.keyValid = true;
             } else {
-              $scope.keyInvalid = true;
+              me.keyInvalid = true;
             }
           });
       } else {
-        $scope.keyValid = false;
-        $scope.keyInvalid = false;
+        me.keyValid = false;
+        me.keyInvalid = false;
       }
 
     };
