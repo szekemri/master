@@ -1,6 +1,7 @@
 // Source: app/styles/scss/general.scss
 @import "fonts";
 @import "mixins";
+@import "baseClasses";
 
 body {
   margin: 0;
@@ -11,6 +12,27 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+// General classes
+.input {
+  margin-left: 40px;
+  margin-right: 40px;
+  label {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  input {
+    border-color: black;
+  }
+}
+
+.toolbar {
+  padding-left: 34px;
+  padding-bottom: 10px;
+}
+.mainPageContainer {
+  height: 100%;
 }
 
 // Source: app/scripts/components/leftBar/leftBar.scss
@@ -124,39 +146,6 @@ body {
 
 
 // Source: app/scripts/login/login.scss
-.loginWrapper {
-  @include boxShadowLevel2;
-  max-width: 500px;
-  margin: 0 auto;
-  position: relative;
-  top: 20%;
-  opacity: 0.93;
-  .loginInput {
-    margin-left: 40px;
-    margin-right: 40px;
-    label {
-      font-weight: 500;
-      font-size: 15px;
-    }
-    input {
-      border-color: black;
-    }
-  }
-  .loginToolbar {
-    padding-left: 34px;
-    padding-bottom: 10px;
-  }
-}
-
-.loginContainer {
-  background: url("images/login.jpg");
-  background-size: cover;
-  height: 100%;
-}
-
-.mainPageContainer {
-  height: 100%;
-}
 
 
 
@@ -221,6 +210,37 @@ body {
   height: 60px;
   background: #303F9F;
 }
+
+// Source: app/scripts/register/register.scss
+.registerWrapper {
+  @extend .formWrapper;
+  top: 10%;
+  .keyCodeMark {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    &:before {
+      font-family: 'Material Icons';
+      font-size: 25px;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+    &.valid {
+      &:before {
+        content: 'check';
+        color: #43A047;
+      }
+    }
+    &.invalid {
+      &:before {
+        content: 'close';
+        color: #E53935;
+      }
+    }
+
+  }
+}
+
 
 // Source: app/scripts/userAccount/userAccount.style.scss
 .userProfile {

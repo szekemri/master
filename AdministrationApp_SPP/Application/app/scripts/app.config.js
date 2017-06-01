@@ -47,6 +47,12 @@
         url: '/login',
         templateUrl: 'scripts/login/login.template.html',
         controller: 'loginController'
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'scripts/register/register.template.html',
+        controller: 'registerController',
+        controllerAs: 'registerCtrl'
       });
   }
 

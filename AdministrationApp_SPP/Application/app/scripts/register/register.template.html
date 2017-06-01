@@ -1,0 +1,71 @@
+<div class="formContainer">
+  <form name="registerForm" novalidate class="registerWrapper">
+    <md-content layout="column">
+
+      <md-input-container class="input">
+        <label>KeyCode</label>
+        <input name="keyCode" ng-model="keyCode" required ng-blur="checkKeyValidity()">
+        <div ng-messages="registerForm.keyCode.$error">
+          <div ng-message="required">You must enter a keyCode.</div>
+        </div>
+      </md-input-container>
+      <span class="keyCodeMark valid" ng-show="keyValid"></span>
+      <span class="keyCodeMark invalid" ng-show="keyInvalid"></span>
+
+      <md-input-container class="input">
+        <label>First name</label>
+        <input name="firstName" ng-model="firstName" required ng-blur="showUsername()">
+        <div ng-messages="registerForm.firstName.$error">
+          <div ng-message="required">You must enter a first name.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="input">
+        <label>Last name</label>
+        <input name="lastName" ng-model="lastName" required ng-blur="showUsername()">
+        <div ng-messages="registerForm.lastName.$error">
+          <div ng-message="required">You must enter a last name.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="input">
+        <label>Username</label>
+        <input name="username" ng-model="username" readonly>
+      </md-input-container>
+
+      <md-content layout="row">
+
+        <md-input-container class="input">
+          <label>Password</label>
+          <input type="password" name="password" ng-model="password" required>
+          <div ng-messages="registerForm.password.$error">
+            <div ng-message="required">You must enter a password.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="input">
+          <label>Confirm password</label>
+          <input type="password" name="confirmPassword" ng-model="confirmPassword" required>
+          <div ng-messages="registerForm.confirmPassword.$error">
+            <div ng-message="required">You must enter the same password.</div>
+          </div>
+        </md-input-container>
+
+      </md-content>
+
+      <md-input-container class="input">
+        <label>Email</label>
+        <input type="email" name="email" ng-model="email" required ng-pattern="/^.+@.+\..+$/">
+        <div ng-messages="registerForm.email.$error">
+          <div ng-message-exp="['required', 'pattern']">You must enter a valid email address.</div>
+        </div>
+      </md-input-container>
+
+    </md-content>
+
+    <md-content class="toolbar" layout="row">
+
+      <md-button class="registerButton" ng-click="createUser()">Create</md-button>
+    </md-content>
+  </form>
+</div>

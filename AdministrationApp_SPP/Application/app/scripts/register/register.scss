@@ -1,0 +1,29 @@
+.registerWrapper {
+  @extend .formWrapper;
+  top: 10%;
+  .keyCodeMark {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    &:before {
+      font-family: 'Material Icons';
+      font-size: 25px;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+    &.valid {
+      &:before {
+        content: 'check';
+        color: #43A047;
+      }
+    }
+    &.invalid {
+      &:before {
+        content: 'close';
+        color: #E53935;
+      }
+    }
+
+  }
+}
+

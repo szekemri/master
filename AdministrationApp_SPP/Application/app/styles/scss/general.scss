@@ -1,5 +1,6 @@
 @import "fonts";
 @import "mixins";
+@import "baseClasses";
 
 body {
   margin: 0;
@@ -10,4 +11,25 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+// General classes
+.input {
+  margin-left: 40px;
+  margin-right: 40px;
+  label {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  input {
+    border-color: black;
+  }
+}
+
+.toolbar {
+  padding-left: 34px;
+  padding-bottom: 10px;
+}
+.mainPageContainer {
+  height: 100%;
 }

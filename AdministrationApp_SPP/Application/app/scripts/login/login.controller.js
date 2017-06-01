@@ -26,5 +26,9 @@
         }
       }
     };
+
+    $scope.registerUser = function () {
+      $state.go('register');
+    };
   }
 })();
