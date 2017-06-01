@@ -936,6 +936,9 @@
     <Content Include="Application\app\scripts\detailedInformation\detailedInformation.html" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.controller.js" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.html" />
+    <Content Include="Application\app\scripts\login\login.controller.js" />
+    <Content Include="Application\app\scripts\login\login.template.html" />
+    <Content Include="Application\app\scripts\mainView\mainView.template.html" />
     <Content Include="Application\app\scripts\service\administrationService.js" />
     <Content Include="Application\app\scripts\userAccount\userAccount.controller.js" />
     <Content Include="Application\app\scripts\userAccount\userAccount.html" />
@@ -1374,6 +1377,8 @@
     <Content Include="bin\AdministrationApp_SPP.dll.config" />
     <Content Include="Application\app\scripts\detailedInformation\detailedInformation.style.scss" />
     <Content Include="Application\app\scripts\generalInformation\generalInformation.style.scss" />
+    <Content Include="Application\app\scripts\login\login.scss" />
+    <Content Include="Application\app\scripts\mainView\mainView.scss" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -1439,6 +1444,8 @@
     <Content Include="Views\Home\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\app\scripts\mainPage\" />
+    <Folder Include="Application\app\scripts\myAccount\" />
     <Folder Include="Application\dist\images\" />
     <Folder Include="Application\dist\scripts\" />
     <Folder Include="Application\dist\styles\" />
